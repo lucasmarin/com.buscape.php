@@ -22,7 +22,7 @@ use Buscape\Api\Buscape\ViewUserRatingsOperation;
  * utilizar todas as operações para localizar ofertas de produtos,
  * categorias informações sobre vendedores e opinião de clientes.
  */
-class API extends APIInterface {
+class BuscapeAPI extends APIInterface {
 	/**
 	 * Cria um objeto que representa uma operação findCategoryList.
 	 * @return	FindCategoryListOperation

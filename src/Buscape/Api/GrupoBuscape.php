@@ -10,8 +10,8 @@ namespace Buscape\Api;
  */
 
 use Buscape\Api\APIInterface;
-use Buscape\Api\Buscape\API as APIBuscape;
-use Buscape\Api\Lomadee\API as APILomadee;
+use Buscape\Api\Buscape\BuscapeAPI;
+use Buscape\Api\Lomadee\LomadeeAPI;
 use Buscape\Http\HTTPConnection;
 use Buscape\Http\HTTPCookieManager;
 
@@ -52,7 +52,7 @@ class GrupoBuscape {
 	 * @return	API
 	 */
 	public function buscapeAPI() {
-		return $this->prepare( new APIBuscape() );
+		return $this->prepare( new BuscapeAPI() );
 	}
 
 	/**
@@ -61,7 +61,7 @@ class GrupoBuscape {
 	 * @return	API
 	 */
 	public function lomadeeAPI() {
-		return $this->prepare( new APILomadee() );
+		return $this->prepare( new LomadeeAPI() );
 	}
 
 	/**

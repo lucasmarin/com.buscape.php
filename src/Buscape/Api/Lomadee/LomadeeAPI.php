@@ -17,7 +17,7 @@ use Buscape\Api\Lomadee\FindProductListOperation;
 /**
  * @brief	Essa classe representa a API Lomadee.
  */
-class API extends APIInterface {
+class LomadeeAPI extends APIInterface {
 	/**
 	 * @brief	Criar sourceId (código) para o Publisher
 	 * @details	Cria um objeto que representa a operação createSource
