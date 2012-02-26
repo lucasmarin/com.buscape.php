@@ -1,25 +1,20 @@
 <?php
+
+namespace Buscape\Api\Buscape;
+
 /**
- * @brief	Classes relacionadas com a API Lomadee
- * @package	com.buscape.php.api.lomadee
+ * @brief	Classes relacionadas com a API BuscaPé
+ * @package	Buscape\Api\Buscape
  */
 
-require_once 'src/api/APIOperation.php';
+use Buscape\Api\ApiOperation;
 
 /**
- * @brief	Operação findProductList
+ * @brief	Lista de produtos
  * @details	Essa classe representa a operação findProductList
- * da API do Lomadee.
- *
- * Listagem dos produtos (PUs) disponíveis apenas na Lomadee,
- * por exemplo, notebooks da Dell / Saraiva, livros da Saraiva,
- * etc.
- *
- * Toda a documentação do serviço findProductList da API BuscaPé
- * se aplica ao serviço findProductList da API Lomadee. Possui
- * os mesmos filtros, os mesmos resultados, etc
+ * da API do BuscaPé.
  */
-class LomadeeFindProductListOperation extends APIOperation {
+class FindProductListOperation extends APIOperation {
 	/**
 	 * @var	integer
 	 */
@@ -51,13 +46,13 @@ class LomadeeFindProductListOperation extends APIOperation {
 	 * @see		APIOperation::getOperationPath()
 	 */
 	protected function getOperationPath() {
-		return '/service/findProductList/lomadee/';
+		return '/service/findProductList/';
 	}
 
 	/**
 	 * @brief	Define o ID da categoria.
-	 * @details	O parâmetro categoryId deve ser sempre o ID de uma categoria
-	 * final.
+	 * @details	O parâmetro categoryId deve ser sempre o ID de uma
+	 * categoria final.
 	 * Algumas categorias finais não possuem produtos, apenas ofertas.
 	 * Neste caso a resposta do XML terá sua lista de produtos vazia.
 	 * Para não perder o vínculo da consulta, o serviço disponibilizará a

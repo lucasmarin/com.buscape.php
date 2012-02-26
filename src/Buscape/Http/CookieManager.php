@@ -1,11 +1,14 @@
 <?php
+
+namespace Buscape\Http;
+
 /**
  * @brief	Protocolo HTTP
  * @details	Classes e interfaces relacionadas com o protocolo HTTP
- * @package com.buscape.php.http
+ * @package Buscape\Http
  */
 
-require_once 'src/http/Cookie.php';
+use Buscape\Http\Cookie;
 
 /**
  *@brief	Interface para definição de um gerenciador de cookies.

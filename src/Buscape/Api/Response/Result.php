@@ -1,16 +1,19 @@
 <?php
+
+namespace Buscape\Api\Response;
+
 /**
  * @brief	Resposta das operações
  * @details	Classes que representam ou convertem o retorno das operações das
  * 			APIs do Grupo BuscaPé em entidades.
- * @package com.buscape.php.api.response
+ * @package Buscape\Api\Response
  */
 
-require_once 'src/api/response/Advertiser.php';
-require_once 'src/api/response/Category.php';
-require_once 'src/api/response/Product.php';
-require_once 'src/api/response/Offer.php';
-require_once 'src/api/response/ResultDetails.php';
+use Buscape\Api\Response\Advertiser;
+use Buscape\Api\Response\Category;
+use Buscape\Api\Response\Product;
+use Buscape\Api\Response\Offer;
+use Buscape\Api\Response\ResultDetails;
 
 /**
  * @brief	Resultado de uma operação

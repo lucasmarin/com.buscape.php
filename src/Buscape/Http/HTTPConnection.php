@@ -1,13 +1,16 @@
 <?php
+
+namespace Buscape\Http;
+
 /**
  * @brief	Protocolo HTTP
  * @details	Classes e interfaces relacionadas com o protocolo HTTP
- * @package com.buscape.php.http
+ * @package Buscape\Http
  */
 
-require_once 'src/http/HTTPAuthenticator.php';
-require_once 'src/http/HTTPRequestMethod.php';
-require_once 'src/http/CURL.php';
+use Buscape\Http\HTTPAuthenticator;
+use Buscape\Http\HTTPRequestMethod;
+use Buscape\Http\CURL;
 
 /**
  * @brief	Implementação de um conector HTTP.

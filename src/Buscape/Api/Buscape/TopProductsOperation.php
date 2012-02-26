@@ -1,17 +1,20 @@
 <?php
+
+namespace Buscape\Api\Buscape;
+
 /**
  * @brief	Classes relacionadas com a API BuscaPé
- * @package	com.buscape.php.api.buscape
+ * @package	Buscape\Api\Buscape
  */
 
-require_once 'src/api/APIOperation.php';
+use Buscape\Api\ApiOperation;
 
 /**
  * @brief	Produtos populares
  * @details	Essa classe representa a operação topProducts da
  * API do BuscaPé.
  */
-class BuscapeTopProductsOperation extends APIOperation {
+class TopProductsOperation extends APIOperation {
 	/**
 	 * @return	string
 	 * @see		APIOperation::getOperationPath()

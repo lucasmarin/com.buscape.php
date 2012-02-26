@@ -1,31 +1,28 @@
 <?php
-/**
- * @brief	Classes relacionadas com a API BuscaPé
- * @package	com.buscape.php.api.buscape
- */
 
-require_once 'src/api/APIOperation.php';
+namespace Buscape\Api\Lomadee;
 
 /**
- * @brief	Lista de categorias
- * @details	Essa classe representa a operação findCategoryList
- * da API do BuscaPé.
- *
- * O serviço de procura de categorias permite que sejam
- * exibidas informações relativas às categorias. É possível
- * obter categorias, produtos ou ofertas informando apenas
- * um ID de categoria.
- *
- * Existem três tipos de categorias:
- *
- * @li	Categoria raiz - É o primeiro nível da árvore. Através
- * dela obtemos as subcategorias.
- * @li	Subcategoria - É o segundo nível da árvore, em que podemos
- * obter outras subcategorias ou categorias finais.
- * @li	Categoria final - É o último nível da árvore, estando relacionado
- * a uma lista de produtos, ofertas ou serviços.
+ * @brief	Classes relacionadas com a API Lomadee
+ * @package	Buscape\Api\Lomadee
  */
-class BuscapeFindCategoryListOperation extends APIOperation {
+
+use Buscape\Api\ApiOperation;
+
+/**
+ * @brief	Operação findProductList
+ * @details	Essa classe representa a operação findProductList
+ * da API do Lomadee.
+ *
+ * Listagem dos produtos (PUs) disponíveis apenas na Lomadee,
+ * por exemplo, notebooks da Dell / Saraiva, livros da Saraiva,
+ * etc.
+ *
+ * Toda a documentação do serviço findProductList da API BuscaPé
+ * se aplica ao serviço findProductList da API Lomadee. Possui
+ * os mesmos filtros, os mesmos resultados, etc
+ */
+class FindProductListOperation extends APIOperation {
 	/**
 	 * @var	integer
 	 */
@@ -57,11 +54,17 @@ class BuscapeFindCategoryListOperation extends APIOperation {
 	 * @see		APIOperation::getOperationPath()
 	 */
 	protected function getOperationPath() {
-		return '/service/findCategoryList/';
+		return '/service/findProductList/lomadee/';
 	}
 
 	/**
 	 * @brief	Define o ID da categoria.
+	 * @details	O parâmetro categoryId deve ser sempre o ID de uma categoria
+	 * final.
+	 * Algumas categorias finais não possuem produtos, apenas ofertas.
+	 * Neste caso a resposta do XML terá sua lista de produtos vazia.
+	 * Para não perder o vínculo da consulta, o serviço disponibilizará a
+	 * URL pronta para consulta das ofertas, informando o mesmo ID da categoria.
 	 * @param	integer $categoryId
 	 * @throws	InvalidArgumentException Se o ID da categoria não for
 	 * um inteiro
@@ -77,10 +80,6 @@ class BuscapeFindCategoryListOperation extends APIOperation {
 
 	/**
 	 * @brief	Define a palavra chave.
-	 * @details	O parâmetro keyword sempre retornará uma lista de
-	 * subcategorias por exemplo, fazendo uma pesquisa por keyword=LG,
-	 * teremos apenas a lista de subcategorias, sendo que as primeiras
-	 * são as mais relevantes.
 	 * @param	string $keyword
 	 * @throws	InvalidArgumentException Se a palavra chave definida
 	 * não for uma string ou um valor scalar.

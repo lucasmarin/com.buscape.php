@@ -1,17 +1,34 @@
 <?php
+
+namespace Buscape\Api\Buscape;
+
 /**
- * @brief	Classes relacionadas com a API Lomadee
- * @package	com.buscape.php.api.lomadee
+ * @brief	Classes relacionadas com a API BuscaPé
+ * @package	Buscape\Api\Buscape
  */
 
-require_once 'src/api/APIOperation.php';
+use Buscape\Api\ApiOperation;
 
 /**
- * @brief	Operação findCategoryList
+ * @brief	Lista de categorias
  * @details	Essa classe representa a operação findCategoryList
- * da API do Lomadee.
+ * da API do BuscaPé.
+ *
+ * O serviço de procura de categorias permite que sejam
+ * exibidas informações relativas às categorias. É possível
+ * obter categorias, produtos ou ofertas informando apenas
+ * um ID de categoria.
+ *
+ * Existem três tipos de categorias:
+ *
+ * @li	Categoria raiz - É o primeiro nível da árvore. Através
+ * dela obtemos as subcategorias.
+ * @li	Subcategoria - É o segundo nível da árvore, em que podemos
+ * obter outras subcategorias ou categorias finais.
+ * @li	Categoria final - É o último nível da árvore, estando relacionado
+ * a uma lista de produtos, ofertas ou serviços.
  */
-class LomadeeFindCategoryListOperation extends APIOperation {
+class FindCategoryListOperation extends APIOperation {
 	/**
 	 * @var	integer
 	 */
@@ -43,7 +60,7 @@ class LomadeeFindCategoryListOperation extends APIOperation {
 	 * @see		APIOperation::getOperationPath()
 	 */
 	protected function getOperationPath() {
-		return '/service/findCategoryList/lomadee/';
+		return '/service/findCategoryList/';
 	}
 
 	/**
@@ -63,9 +80,10 @@ class LomadeeFindCategoryListOperation extends APIOperation {
 
 	/**
 	 * @brief	Define a palavra chave.
-	 * @details	O parâmetro keyword sempre retornará uma lista de subcategorias
-	 * Por exemplo, fazendo uma pesquisa por keyword=LG, teremos apenas
-	 * a lista de subcategorias, sendo que as primeiras são as mais relevantes.
+	 * @details	O parâmetro keyword sempre retornará uma lista de
+	 * subcategorias por exemplo, fazendo uma pesquisa por keyword=LG,
+	 * teremos apenas a lista de subcategorias, sendo que as primeiras
+	 * são as mais relevantes.
 	 * @param	string $keyword
 	 * @throws	InvalidArgumentException Se a palavra chave definida
 	 * não for uma string ou um valor scalar.

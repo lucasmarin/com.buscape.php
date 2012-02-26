@@ -1,30 +1,33 @@
 <?php
+
+namespace Buscape\Api\Response;
+
 /**
  * @brief	Resposta das operações
  * @details	Classes que representam ou convertem o retorno das operações das
  * 			APIs do Grupo BuscaPé em entidades.
- * @package com.buscape.php.api.response
+ * @package Buscape\Api\Response
  */
-require_once 'src/api/response/Address.php';
-require_once 'src/api/response/AddressList.php';
-require_once 'src/api/response/Advertiser.php';
-require_once 'src/api/response/Category.php';
-require_once 'src/api/response/Contact.php';
-require_once 'src/api/response/ContactList.php';
-require_once 'src/api/response/EBitRating.php';
-require_once 'src/api/response/Item.php';
-require_once 'src/api/response/Link.php';
-require_once 'src/api/response/LinkList.php';
-require_once 'src/api/response/Map.php';
-require_once 'src/api/response/OfferPrice.php';
-require_once 'src/api/response/OfferParcel.php';
-require_once 'src/api/response/Rating.php';
-require_once 'src/api/response/ResponseBuilder.php';
-require_once 'src/api/response/ResultDetails.php';
-require_once 'src/api/response/Specification.php';
-require_once 'src/api/response/Seller.php';
-require_once 'src/api/response/Thumbnail.php';
-require_once 'src/api/response/UserAverageRating.php';
+use Buscape\Api\Response\Address;
+use Buscape\Api\Response\AddressList;
+use Buscape\Api\Response\Advertiser;
+use Buscape\Api\Response\Category;
+use Buscape\Api\Response\Contact;
+use Buscape\Api\Response\ContactList;
+use Buscape\Api\Response\EBitRating;
+use Buscape\Api\Response\Item;
+use Buscape\Api\Response\Link;
+use Buscape\Api\Response\LinkList;
+use Buscape\Api\Response\Map;
+use Buscape\Api\Response\OfferPrice;
+use Buscape\Api\Response\OfferParcel;
+use Buscape\Api\Response\Rating;
+use Buscape\Api\Response\ResponseBuilder;
+use Buscape\Api\Response\ResultDetails;
+use Buscape\Api\Response\Specification;
+use Buscape\Api\Response\Seller;
+use Buscape\Api\Response\Thumbnail;
+use Buscape\Api\Response\UserAverageRating;
 
 /**
  * @brief	Builder da resposta

@@ -1,16 +1,19 @@
 <?php
+
+namespace Buscape\Api;
+
 /**
  * @brief	Pacote base da biblioteca do grupo BuscaPé
  * @details	Esse pacote contém as classes e interfaces
  * necessárias para integração com as APIs do Grupo BuscaPé.
- * @package	com.buscape.php.api
+ * @package	Buscape\Api
  */
 
-require_once 'src/api/APIInterface.php';
-require_once 'src/api/buscape/BuscapeAPI.php';
-require_once 'src/api/lomadee/LomadeeAPI.php';
-require_once 'src/http/HTTPConnection.php';
-require_once 'src/http/HTTPCookieManager.php';
+use Buscape\Api\APIInterface;
+use Buscape\Api\Buscape\API as APIBuscape;
+use Buscape\Api\Lomadee\API as APILomadee;
+use Buscape\Http\HTTPConnection;
+use Buscape\Http\HTTPCookieManager;
 
 /**
  * @brief	Interface para acesso às APIs do Grupo BuscaPé.
@@ -46,19 +49,19 @@ class GrupoBuscape {
 	/**
 	 * @brief	API BuscaPé
 	 * @details	Recupera o objeto de integração com a API do BuscaPé.
-	 * @return	BuscapeAPI
+	 * @return	API
 	 */
 	public function buscapeAPI() {
-		return $this->prepare( new BuscapeAPI() );
+		return $this->prepare( new APIBuscape() );
 	}
 
 	/**
 	 * @brief	API Lomadee
 	 * @details	Recupera o objeto de integração com a API do Lomadee.
-	 * @return	LomadeeAPI
+	 * @return	API
 	 */
 	public function lomadeeAPI() {
-		return $this->prepare( new LomadeeAPI() );
+		return $this->prepare( new APILomadee() );
 	}
 
 	/**

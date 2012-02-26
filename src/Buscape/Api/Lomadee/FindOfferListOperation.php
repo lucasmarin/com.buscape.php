@@ -1,17 +1,36 @@
 <?php
-/**
- * @brief	Classes relacionadas com a API BuscaPé
- * @package	com.buscape.php.api.buscape
- */
 
-require_once 'src/api/APIOperation.php';
+namespace Buscape\Api\Lomadee;
 
 /**
- * @brief	Lista de produtos
- * @details	Essa classe representa a operação findProductList
- * da API do BuscaPé.
+ * @brief	Classes relacionadas com a API Lomadee
+ * @package	Buscape\Api\Lomadee
  */
-class BuscapeFindProductListOperation extends APIOperation {
+
+use Buscape\Api\ApiOperation;
+
+/**
+ * @brief	Operação findOfferList
+ * @details	Essa classe representa a operação findOfferList
+ * da API do Lomadee.
+ *
+ * Listagem das ofertas disponíveis apenas na Lomadee,
+ * por exemplo, notebooks da Dell / Saraiva, livros da
+ * Saraiva, etc.
+ *
+ * Toda a documentação do serviço findOfferList da API
+ * BuscaPé se aplica ao serviço findOfferList da API
+ * Lomadee. Possui os mesmos filtros, os mesmos resultados,
+ * etc, porém os links são CPA. Na API BuscaPé o mesmo serviço
+ * de ofertas, os links são CPC, sendo a única diferença entre
+ * os serviços.
+ */
+class FindOfferListOperation extends APIOperation {
+	/**
+	 * @var	string
+	 */
+	private $barcode;
+
 	/**
 	 * @var	integer
 	 */
@@ -21,6 +40,19 @@ class BuscapeFindProductListOperation extends APIOperation {
 	 * @var	string
 	 */
 	private $keyword;
+
+	/**
+	 * @var	integer
+	 */
+	private $productId;
+
+	/**
+	 * @brief	Recupera o código de barras.
+	 * @return	string
+	 */
+	public function getBarCode() {
+		return $this->barcode;
+	}
 
 	/**
 	 * @brief	Recupera o ID da categoria.
@@ -39,11 +71,27 @@ class BuscapeFindProductListOperation extends APIOperation {
 	}
 
 	/**
+	 * @brief	Recupera o ID do produto.
+	 * @return	integer
+	 */
+	public function getProductId() {
+		return $this->productId;
+	}
+
+	/**
 	 * @return	string
 	 * @see		APIOperation::getOperationPath()
 	 */
 	protected function getOperationPath() {
-		return '/service/findProductList/';
+		return '/service/findOfferList/lomadee/';
+	}
+
+	/**
+	 * @brief	Define o código de barras.
+	 * @param	string $barcode
+	 */
+	public function setBarCode( $barcode ) {
+		$this->barcode = $barcode;
 	}
 
 	/**
@@ -79,6 +127,21 @@ class BuscapeFindProductListOperation extends APIOperation {
 			$this->apiInterface->getHTTPConnection()->setParam( 'keyword' , $keyword );
 		} else {
 			throw new InvalidArgumentException( 'A palavra chave é inválida' );
+		}
+	}
+
+	/**
+	 * @brief	Define o ID do produto.
+	 * @param	integer $productId
+	 * @throws	InvalidArgumentException Se o ID do produto não for um
+	 * inteiro.
+	 */
+	public function setProductId( $productId ) {
+		if ( is_int( $productId ) ) {
+			$this->productId = $productId;
+			$this->apiInterface->getHTTPConnection()->setParam( 'productId' , $productId );
+		} else {
+			throw new InvalidArgumentException( 'O ID do produto precisa ser um inteiro' );
 		}
 	}
 }

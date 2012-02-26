@@ -1,14 +1,15 @@
 <?php
 
-namespace buscapeapi;
+namespace Buscape\Api;
+
 /**
  * @brief	Pacote base da biblioteca do grupo BuscaPé
  * @details	Esse pacote contém as classes e interfaces
  * necessárias para integração com as APIs do Grupo BuscaPé
- * @package	com.buscape.php.api
+ * @package	Buscape\Api
  */
 
-require_once 'src/http/HTTPConnection.php';
+use Buscape\Http\HTTPConnection;
 
 /**
  * @brief	Base para a implementação de uma API do Grupo BuscaPé.

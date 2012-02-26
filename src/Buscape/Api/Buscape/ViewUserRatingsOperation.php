@@ -1,17 +1,20 @@
 <?php
+
+namespace Buscape\Api\Buscape;
+
 /**
  * @brief	Classes relacionadas com a API BuscaPé
- * @package	com.buscape.php.api.buscape
+ * @package	Buscape\Api\Buscape
  */
 
-require_once 'src/api/APIOperation.php';
+use Buscape\Api\ApiOperation;
 
 /**
  * @brief	Avaliação de usuários
  * @details	Essa classe representa a operação viewUserRatings
  * da API do BuscaPé.
  */
-class BuscapeViewUserRatingsOperation extends APIOperation {
+class ViewUserRatingsOperation extends APIOperation {
 	/**
 	 * @var	integer
 	 */

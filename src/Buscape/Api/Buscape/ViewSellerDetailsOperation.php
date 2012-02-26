@@ -1,17 +1,20 @@
 <?php
+
+namespace Buscape\Api\Buscape;
+
 /**
  * @brief	Classes relacionadas com a API BuscaPé
- * @package	com.buscape.php.api.buscape
+ * @package	Buscape\Api\Buscape
  */
 
-require_once 'src/api/APIOperation.php';
+use Buscape\Api\ApiOperation;
 
 /**
  * @brief	Detalhes de vendedores
  * @details	Essa classe representa a operação viewSellerDetails
  * da API do BuscaPé.
  */
-class BuscapeViewSellerDetailsOperation extends APIOperation {
+class ViewSellerDetailsOperation extends APIOperation {
 	/**
 	 * @var	integer
 	 */

@@ -1,14 +1,16 @@
 <?php
+
+namespace Buscape\Api;
+
 /**
  * @brief	Pacote base da biblioteca do grupo BuscaPé
  * @details	Esse pacote contém as classes e interfaces
  * necessárias para integração com as APIs do Grupo BuscaPé
- * @package	com.buscape.php.api
+ * @package	Buscape\Api
  */
-
-require_once 'src/api/APIInterface.php';
-require_once 'src/api/response/JSONResponseBuilder.php';
-require_once 'src/api/response/XMLResponseBuilder.php';
+use Buscape\Api\APIInterface;
+use Buscape\Api\Response\JSONResponseBuilder;
+use Buscape\Api\Response\XMLResponseBuilder;
 
 /**
  * @brief	Interface de uma operação de uma API

@@ -1,10 +1,13 @@
 <?php
+
+namespace Buscape\Api\Lomadee;
+
 /**
  * @brief	Classes relacionadas com a API Lomadee
- * @package	com.buscape.php.api.lomadee
+ * @package	Buscape\Api\Lomadee
  */
 
-require_once 'src/api/APIOperation.php';
+use Buscape\Api\ApiOperation;
 
 /**
  * @brief	Operação findAdvertiserList
@@ -16,7 +19,7 @@ require_once 'src/api/APIOperation.php';
  * melhora na configuração de suas aplicações e permitindo que os
  * usuários escolham quais programas a aplicação utilizará.
  */
-class LomadeeFindAdvertiserListOperation extends APIOperation {
+class FindAdvertiserListOperation extends APIOperation {
 	/**
 	 * @var	integer
 	 */

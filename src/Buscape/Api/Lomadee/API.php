@@ -1,63 +1,66 @@
 <?php
+
+namespace Buscape\Api\Lomadee;
+
 /**
  * @brief	Classes relacionadas com a API Lomadee
- * @package	com.buscape.php.api.lomadee
+ * @package	Buscape\Api\Lomadee
  */
 
-require_once 'src/api/APIInterface.php';
-require_once 'src/api/lomadee/LomadeeCreateSourceOperation.php';
-require_once 'src/api/lomadee/LomadeeFindAdvertiserListOperation.php';
-require_once 'src/api/lomadee/LomadeeFindCategoryListOperation.php';
-require_once 'src/api/lomadee/LomadeeFindOfferListOperation.php';
-require_once 'src/api/lomadee/LomadeeFindProductListOperation.php';
+use Buscape\Api\APIInterface;
+use Buscape\Api\Lomadee\CreateSourceOperation;
+use Buscape\Api\Lomadee\FindAdvertiserListOperation;
+use Buscape\Api\Lomadee\FindCategoryListOperation;
+use Buscape\Api\Lomadee\FindOfferListOperation;
+use Buscape\Api\Lomadee\FindProductListOperation;
 
 /**
  * @brief	Essa classe representa a API Lomadee.
  */
-class LomadeeAPI extends APIInterface {
+class API extends APIInterface {
 	/**
 	 * @brief	Criar sourceId (código) para o Publisher
 	 * @details	Cria um objeto que representa a operação createSource
 	 * para criação de um sourceIf (código) para o Publisher.
-	 * @return	LomadeeCreateSourceOperation
+	 * @return	CreateSourceOperation
 	 */
 	public function createSource() {
-		return new LomadeeCreateSourceOperation( $this );
+		return new CreateSourceOperation( $this );
 	}
 
 	/**
 	 * @brief	Lista de anunciantes
 	 * @details	Cria um objeto que representa a operação findAdvertiserList.
-	 * @return	LomadeeFindAdvertiserListOperation
+	 * @return	FindAdvertiserListOperation
 	 */
 	public function findAdvertiserList() {
-		return new LomadeeFindAdvertiserListOperation( $this );
+		return new FindAdvertiserListOperation( $this );
 	}
 
 	/**
 	 * @brief	Lista de categorias
 	 * @details	Cria um objeto que representa uma operação findCategoryList.
-	 * @return	LomadeeFindCategoryListOperation
+	 * @return	FindCategoryListOperation
 	 */
 	public function findCategoryList() {
-		return new LomadeeFindCategoryListOperation( $this );
+		return new FindCategoryListOperation( $this );
 	}
 
 	/**
 	 * @brief	Lista de ofertas
 	 * @details	Cria um objeto que representa uma operação findOfferList.
-	 * @return	LomadeeFindOfferListOperation
+	 * @return	FindOfferListOperation
 	 */
 	public function findOfferList() {
-		return new LomadeeFindOfferListOperation( $this );
+		return new FindOfferListOperation( $this );
 	}
 
 	/**
 	 * @brief	Lista de produtos
 	 * @details	Cria um objeto que representa a operação findProductList.
-	 * @return	LomadeeFindProductListOperation
+	 * @return	FindProductListOperation
 	 */
 	public function findProductList() {
-		return new LomadeeFindProductListOperation( $this );
+		return new FindProductListOperation( $this );
 	}
 }

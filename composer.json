@@ -1,0 +1,25 @@
+{
+  "name": "buscapeapi/buscape",
+  "description": "Api do buscape utilizando conceitos inseridos no php 5.3 como namespace",
+  "keywords": ["buscape","api"],
+  "homepage": "http://github.com/lucasmarin/com.buscape.php",
+  "type": "api",
+  "authors": [
+    {
+      "name": "Lucas Stevanelli Marin",
+      "email": "lucasmarin@gmail.com",
+      "homepage": "http://github.com/lucasmarin/"
+    },
+    {
+      "name": "Neto Joao Batista",
+      "email": "neto.joaobastista@gmail.com",
+      "homepage": "http://netojoaobastista.blogspot.com/"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.0"
+  },
+  "autoload": {
+    "psr-0": {"Buscape": "src/"}
+  }
+}
