@@ -6,6 +6,10 @@ Insira as linhas abaixo dentro no final do seu arquivo deps, na raiz do Symfony2
       git=http://github.com/lucasmarin/com.buscape.php.git
       version=1.0
 
+Importe o projeto executando o comando
+
+    php bin/vendors install
+
 Após termino da importação do projeto pra sua pasta vendors, insira no seu arquivo app/autoload.php o seguinte:
 
     $loader->registerNamespaces(array(
