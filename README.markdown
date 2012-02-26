@@ -17,5 +17,7 @@ Rode
 
     php app/console cache:clear 
 
-DONE!, a API do Buscapé já está disponível para ser acessada no seu projeto.
+DONE! 
+
+A API do Buscapé já está disponível para ser acessada no seu projeto.
 
